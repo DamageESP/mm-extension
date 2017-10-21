@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Mega MegaMagnate",
   "short_name": "MegaMM",
   "description": "Esta extensión proporciona distintas herramientas para mejorar la experiencia de juego en MegaMagnate.",
