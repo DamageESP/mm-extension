@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["https://www.megamagnate.net/*"],
-      "js": ["jquery-latest.js", "content-patcher.js"]
+      "js": ["content-patcher.js"]
     }
   ]
 }
