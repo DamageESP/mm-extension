@@ -7,8 +7,8 @@ browser.storage.sync.get(["mm_devMode"], settings => {
   } else {
     env = "https://rawgit.com/NiciusB/MegaMegamagnate/master/dist"
   }
-  
-  bundle = document.createElement("script")
+
+  let bundle = document.createElement("script")
   bundle.type = "text/javascript"
   bundle.src = env + '/app.bundle.js'
   document.getElementsByTagName('body')[0].append(bundle)
