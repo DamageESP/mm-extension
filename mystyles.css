@@ -1,7 +1,7 @@
 body {
-  min-width: 300px;
-  background: #373737;
   color: #b6b6b6;
+  min-width: 400px;
+  background: #373737;
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -18,29 +18,51 @@ nav {
   display: flex;
   flex-direction: row;
 }
+nav:not(:last-child) {
+  border-top: 1px solid black;
+}
 nav span {
   cursor: pointer;
   padding: 5px;
-  background: #b2b2b2;
+  background: #b6b6b6;
   text-align: center;
   flex: 1 1;
+}
+nav span {
+  color: white;
 }
 nav span:not(:first-child) {
   border-left: 1px solid black;
 }
 nav span a {
-  color: white;
+  color: white !important;
   text-decoration: none;
 }
 .active {
   font-weight: bold;
 }
-#content div {
+#settings div, #home {
   padding: 5px;
 }
-footer #links {
+#settings div {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+#casinos input {
+  width: inherit;
+}
+.sectionTitle {
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#links {
+  display: flex;
+  flex-direction: row;
+}
+footer {
+  background: black;
 }
 footer span {
   flex-grow: 1 1;
