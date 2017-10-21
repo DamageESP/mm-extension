@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mega MegaMagnate",
+  "description": "Esta extensión proporciona distintas herramientas para mejorar la experiencia de juego en MegaMagnate.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Mega MegaMagnate",
+    "default_popup": "mm-index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "https://www.megamagnate.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.megamagnate.net/*"],
+      "js": ["jquery-latest.js", "content-patcher.js"]
+    }
+  ]
+}
