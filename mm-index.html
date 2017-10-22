@@ -17,23 +17,29 @@
       </div>
       <div id="settings" style="display:none;">
         <nav id="settingsNav">
-          <span><a class="active" href="#general"></a>General</span>
+          <span class="active"><a href="#general"></a>General</span>
           <span><a href="#casinos"></a>Casinos</span>
           <span><a href="#hilo"></a>HiLo</span>
           <span><a href="#advanced"></a>Avanzado</span>
         </nav>
         <div id="settingsContent">
           <div id="general">
-            <span class="sectionTitle">Money Timer</span>
+            <div class="settingBlock">
+              <span class="settingTitle">Money Timer:</span>&nbsp;<a class="setting" id="general_moneyTimer" href="#">on</a>
+            </div>
+            <div class="settingBlock">
+              <span class="settingTitle">Google Play button:</span>&nbsp;<a class="setting" id="general_playButton" href="#">on</a>
+            </div>
           </div>
           <div id="casinos" style="display:none;">
-            <label><input type="number" id="slowTime"/>Tiempo de espera en Modo Lento</label>
+            <label><input type="number" class="setting" id="casinos_slowTimer"/>Tiempo de espera en Modo Lento</label>
+            <label><input type="number" class="setting" id="casinos_slowAmount"/>Cantidad maxima para activar Modo Lento</label>
           </div>
           <div id="hilo" style="display:none;">
             <span>hey</span>hey
           </div>
           <div id="advanced" style="display:none;">
-            <label><input id="devMode" type="checkbox" />Dev mode</label>
+            <label><input class="setting" id="advanced_devMode" type="checkbox" />Dev mode</label>
           </div>
         </div>
       </div>

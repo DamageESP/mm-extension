@@ -14,6 +14,7 @@
   },
   "permissions": [
     "storage",
+    "tabs",
     "https://www.megamagnate.net/*"
   ],
   "content_scripts": [

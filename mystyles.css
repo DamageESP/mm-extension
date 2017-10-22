@@ -52,10 +52,14 @@ nav span a {
 #casinos input {
   width: inherit;
 }
-.sectionTitle {
-  display: block;
+.settingTitle {
   font-weight: bold;
   text-decoration: underline;
+}
+.settingBlock a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  color: #b6b6b6;
 }
 #links {
   display: flex;

@@ -4,7 +4,7 @@ let switchTab = (newTab, navId) => {
   let hide = document.querySelector("#" + navId).parentNode.querySelector("div").children
   for (let i = 0; i < hide.length; i++) {
     hide[i].style.display = "none"
-    if (i == hide.length - 1) document.querySelector(newTab).style.display = "block"
+    if (i == hide.length - 1) document.querySelector(newTab).style.display = ""
   }
 }
 
@@ -20,13 +20,55 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Get settings
-  browser.storage.sync.get(["mm_devMode"], settings => {
-    let devMode = document.querySelector('#devMode')
-    devMode.checked = settings.mm_devMode
-    devMode.addEventListener('change', e => {
-      settings.mm_devMode = devMode.checked
-      browser.storage.sync.set(settings)
+  // Settings change
+  let settingElems = document.querySelectorAll(".setting")
+  for (let i = 0; i < settingElems.length; i++) {
+    console.log(settingElems[i].tagName);
+    let eventType
+    if (settingElems[i].tagName == "A") {
+      eventType = "click"
+    }
+    if (settingElems[i].tagName == "INPUT") {
+      eventType = "change"
+    }
+    settingElems[i].addEventListener(eventType, e => {
+      changeSetting(settingElems[i].id)
     })
+  }
+  let changeSetting = (setting) => {
+    let elem = document.querySelector("#" + setting)
+    let newVal
+    if (elem.tagName == "A") {
+      newVal = elem.innerHTML == 'on' ? false : true
+      elem.innerHTML = newVal ? 'on' : 'off'
+    }
+    if (elem.tagName == "INPUT") {
+      if (elem.getAttribute("type") == "checkbox") {
+        newVal = elem.checked
+      } else {
+        newVal = elem.value
+      }
+    }
+    console.log(setting, newVal);
+    setting = {
+      [setting]: newVal
+    }
+    browser.storage.sync.set(setting)
+  }
+  browser.storage.sync.get(null, settings => {
+    console.log(settings)
+    for (setting in settings) {
+      let elem = document.querySelector("#" + setting)
+      if (elem.tagName == "A") {
+        elem.innerHTML = settings[setting] ? "on" : "off"
+      }
+      if (elem.tagName == "INPUT") {
+        if (elem.getAttribute("type") == "checkbox") {
+          elem.checked = settings[setting]
+        } else {
+          elem.value = settings[setting]
+        }
+      }
+    }
   })
 })
