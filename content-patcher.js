@@ -6,7 +6,7 @@ browser.storage.sync.get(null, settings => {
   if (settings.advanced_devMode) {
     env = "https://localhost:8080"
   } else {
-    env = "https://raw.githubusercontent.com/NiciusB/MegaMegamagnate/master/dist"
+    env = "https://rawgit.com/NiciusB/MegaMegamagnate/master/dist"
   }
 
   let settingsNode = document.createElement('input')
