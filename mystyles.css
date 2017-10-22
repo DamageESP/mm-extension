@@ -1,7 +1,8 @@
 body {
-  color: #b6b6b6;
+  font-family: 'Exo', sans-serif;
+  font-size: 14px;
   min-width: 400px;
-  background: #373737;
+  background: #EBEBEB;
   margin: 0;
 }
 main {
@@ -13,41 +14,43 @@ main {
   flex: 1 1;
 }
 h2 {
-  background: #555;
-  text-align: center;
+  background: white;
+  color: #373737;
+  font-weight: 700;
   margin: 0;
-  padding: 10px 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
 }
 
 nav {
   display: flex;
   flex-direction: row;
 }
-nav:not(:last-child) {
-  border-top: 1px solid black;
+nav {
+  border-top: 5px solid #ff9800;
 }
 nav span {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
   cursor: pointer;
-  padding: 5px;
-  background: #b6b6b6;
+  padding: 10px;
   text-align: center;
   flex: 1 1;
 }
-nav span {
-  color: white;
+nav span:hover {
+  background: #F2F2F2 !important;
+}
+nav span > a {
+  color: #373737 !important;
+  text-decoration: none;
 }
 nav span:not(:first-child) {
-  border-left: 1px solid black;
-}
-nav span a {
-  color: white !important;
-  text-decoration: none;
+  border-left: 1px solid rgba(0, 0, 0, .1);
 }
 .active {
   font-weight: bold;
 }
-#content, nav {
-  margin-bottom: 15px;
+#settingsContent, #home {
+  margin: 15px 10px;
 }
 
 #settings div, #home {
@@ -76,7 +79,7 @@ input.setting[type="number"] {
 
 
 footer {
-  background: black;
+  background: white;
 }
 footer #links {
   display: flex;
@@ -90,11 +93,11 @@ footer span:not(:first-child)::before {
   content: '|';
 }
 footer span a {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  color: #373737;
   padding: 5px;
 }
 footer hr {
   margin: 0;
-  border: .45px solid rgba(255, 255, 255, 0.5);
+  border: .45px solid rgba(0, 0, 0, 0.5);
 }

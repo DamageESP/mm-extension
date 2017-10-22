@@ -10,7 +10,7 @@ browser.storage.sync.get(null, customSettings => {
 })
 
 function addSettingsNode(settings) {
-  settings.version = 'v1.6'
+  settings.version = 'v1.7'
   let settingsNode = document.createElement('input')
   settingsNode.type = "hidden"
   settingsNode.id = "mm_settings"
