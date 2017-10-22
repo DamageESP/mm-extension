@@ -37,21 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Foreach setting
   let settingElems = document.querySelectorAll(".setting")
   for (let i = 0; i < settingElems.length; i++) {
-    // Set setting values
+    // Set default+saved setting values
     browser.storage.sync.get(settingElems[i].id, settings => {
       let isDefined = settings.hasOwnProperty(settingElems[i].id)
       if (isDefined) {
         setSettingValue(settingElems[i].id, settings[settingElems[i].id])
       } else {
-        let defaults = {
-          general_moneyTimer: 'on',
-          general_playButton: 'off',
-          casinos_slowTimer: 10,
-          casinos_slowAmount: 800000,
-          hilo_exitOn: 1000000,
-          advanced_devMode: false
-        }
-        setSettingValue(settingElems[i].id, defaults[settingElems[i].id])
+        setSettingValue(settingElems[i].id, defaultSettings[settingElems[i].id])
       }
     })
 
