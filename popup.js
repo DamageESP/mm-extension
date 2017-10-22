@@ -49,14 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
         newVal = elem.value
       }
     }
-    console.log(setting, newVal);
     setting = {
       [setting]: newVal
     }
     browser.storage.sync.set(setting)
   }
   browser.storage.sync.get(null, settings => {
-    console.log(settings)
     for (setting in settings) {
       let elem = document.querySelector("#" + setting)
       if (elem.tagName == "A") {
