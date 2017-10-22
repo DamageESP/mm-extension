@@ -3,7 +3,7 @@
   "name": "Mega MegaMagnate",
   "short_name": "MegaMM",
   "description": "Esta extensión proporciona distintas herramientas para mejorar la experiencia de juego en MegaMagnate.",
-  "version": "1.1",
+  "version": "1.2",
   "icons": {
     "48": "icon.png"
   },
