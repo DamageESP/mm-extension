@@ -1,6 +1,5 @@
 var browser = browser || chrome
 
-
 var settings = defaultSettings
 browser.storage.sync.get(null, customSettings => {
   for(key in customSettings) {
@@ -11,7 +10,7 @@ browser.storage.sync.get(null, customSettings => {
 })
 
 function addSettingsNode(settings) {
-  settings.version = 'v1.5'
+  settings.version = 'v1.6'
   let settingsNode = document.createElement('input')
   settingsNode.type = "hidden"
   settingsNode.id = "mm_settings"

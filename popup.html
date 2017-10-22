@@ -1,16 +1,23 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Mega MegaMagnate</title>
-    <script type="text/javascript" src="defaultSettings.js"></script>
-    <script type="text/javascript" src="popup.js"></script>
-    <link rel="stylesheet" href="mystyles.css"/>
-  </head>
-  <body>
+
+<head>
+  <title>Mega MegaMagnate</title>
+  <script type="text/javascript" src="defaultSettings.js"></script>
+  <script type="text/javascript" src="popup.js"></script>
+  <link rel="stylesheet" href="mystyles.css" />
+</head>
+
+<body>
+  <main>
     <h2>Mega Megamagnate</h2>
     <nav id="mainNav">
-      <span><a class="active" href="#home">Homepage</a></span>
-      <span><a href="#settings">Settings</a></span>
+      <span>
+        <a class="active" href="#home">Homepage</a>
+      </span>
+      <span>
+        <a href="#settings">Settings</a>
+      </span>
     </nav>
     <div id="content">
       <div id="home">
@@ -18,29 +25,39 @@
       </div>
       <div id="settings" style="display:none;">
         <nav id="settingsNav">
-          <span class="active"><a href="#general"></a>General</span>
-          <span><a href="#casinos"></a>Casinos</span>
-          <span><a href="#hilo"></a>HiLo</span>
-          <span><a href="#advanced"></a>Avanzado</span>
+          <span class="active">
+            <a href="#general"></a>General</span>
+          <span>
+            <a href="#casinos"></a>Casinos</span>
+          <span>
+            <a href="#hilo"></a>HiLo</span>
+          <span>
+            <a href="#advanced"></a>Avanzado</span>
         </nav>
         <div id="settingsContent">
           <div id="general">
             <div class="settingBlock">
-              <span class="settingTitle">Money Timer:</span> <a class="setting" id="general_moneyTimer" href="#"></a>
+              <span class="settingTitle">Money Timer:</span>
+              <a class="setting" id="general_moneyTimer" href="#"></a>
             </div>
             <div class="settingBlock">
-              <span class="settingTitle">Google Play button:</span> <a class="setting" id="general_playButton" href="#"></a>
+              <span class="settingTitle">Google Play button:</span>
+              <a class="setting" id="general_playButton" href="#"></a>
             </div>
           </div>
           <div id="casinos" style="display:none;">
-            <label><input type="number" class="setting" id="casinos_slowTimer"/> Tiempo de espera en Modo Lento</label>
-            <label><input type="number" class="setting" id="casinos_slowAmount"/> Cantidad maxima para activar Modo Lento</label>
+            <label>
+              <input type="number" class="setting" id="casinos_slowTimer" /> Tiempo de espera en Modo Lento</label>
+            <label>
+              <input type="number" class="setting" id="casinos_slowAmount" /> Cantidad maxima para activar Modo Lento</label>
           </div>
           <div id="hilo" style="display:none;">
-            <label><input type="number" class="setting" id="hilo_exitOn"/> Fichas objetivo</label>
+            <label>
+              <input type="number" class="setting" id="hilo_exitOn" /> Fichas objetivo</label>
           </div>
           <div id="advanced" style="display:none;">
-            <label><input class="setting" id="advanced_devMode" type="checkbox" /> Dev mode</label>
+            <label>
+              <input class="setting" id="advanced_devMode" type="checkbox" /> Dev mode</label>
           </div>
         </div>
       </div>
@@ -48,10 +65,18 @@
     <footer>
       <hr />
       <div id="links">
-        <span><a href="https://github.com/NiciusB/MegaMegamagnate" target="_blank">GitHub</a></span>
-        <span><a href="https://twitter.com/Balbonator" target="_blank">@Balbonator</a></span>
-        <span><a href="https://twitter.com/Victor26B" target="_blank">@Victor26B</a></span>
+        <span>
+          <a href="https://github.com/NiciusB/MegaMegamagnate" target="_blank">GitHub</a>
+        </span>
+        <span>
+          <a href="https://twitter.com/Balbonator" target="_blank">@Balbonator</a>
+        </span>
+        <span>
+          <a href="https://twitter.com/Victor26B" target="_blank">@Victor26B</a>
+        </span>
       </div>
     </footer>
-  </body>
+  </main>
+</body>
+
 </html>

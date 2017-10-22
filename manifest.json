@@ -3,11 +3,12 @@
   "name": "Mega MegaMagnate",
   "short_name": "MegaMM",
   "description": "Esta extensión proporciona distintas herramientas para mejorar la experiencia de juego en MegaMagnate.",
-  "version": "1.5",
+  "homepage_url": "https://github.com/NiciusB/MegaMegamagnate",
+  "version": "1.6",
   "icons": {
     "48": "icon.png"
   },
-  "browser_action": {
+  "page_action": {
     "default_icon": "icon.png",
     "default_title": "Mega MegaMagnate",
     "default_popup": "popup.html"
