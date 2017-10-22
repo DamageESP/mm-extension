@@ -20,53 +20,62 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Settings change
-  let settingElems = document.querySelectorAll(".setting")
-  for (let i = 0; i < settingElems.length; i++) {
-    console.log(settingElems[i].tagName);
-    let eventType
-    if (settingElems[i].tagName == "A") {
-      eventType = "click"
-    }
-    if (settingElems[i].tagName == "INPUT") {
-      eventType = "change"
-    }
-    settingElems[i].addEventListener(eventType, e => {
-      changeSetting(settingElems[i].id)
-    })
-  }
-  let changeSetting = (setting) => {
+  function setSettingValue(setting, value) {
     let elem = document.querySelector("#" + setting)
-    let newVal
     if (elem.tagName == "A") {
-      newVal = elem.innerHTML == 'on' ? false : true
-      elem.innerHTML = newVal ? 'on' : 'off'
+      elem.innerHTML = value ? "on" : "off"
     }
     if (elem.tagName == "INPUT") {
       if (elem.getAttribute("type") == "checkbox") {
-        newVal = elem.checked
+        elem.checked = value
       } else {
-        newVal = elem.value
+        elem.value = value
       }
     }
-    setting = {
-      [setting]: newVal
-    }
-    browser.storage.sync.set(setting)
   }
-  browser.storage.sync.get(null, settings => {
-    for (setting in settings) {
-      let elem = document.querySelector("#" + setting)
+
+  // Foreach setting
+  let settingElems = document.querySelectorAll(".setting")
+  for (let i = 0; i < settingElems.length; i++) {
+    // Set setting values
+    browser.storage.sync.get(settingElems[i].id, settings => {
+      let isDefined = settings.hasOwnProperty(settingElems[i].id)
+      if (isDefined) {
+        setSettingValue(settingElems[i].id, settings[settingElems[i].id])
+      } else {
+        let defaults = {
+          general_moneyTimer: 'on',
+          general_playButton: 'off',
+          casinos_slowTimer: 10,
+          casinos_slowAmount: 800000,
+          hilo_exitOn: 1000000,
+          advanced_devMode: false
+        }
+        setSettingValue(settingElems[i].id, defaults[settingElems[i].id])
+      }
+    })
+
+    // Listen to settings changes
+    let eventType
+    if (settingElems[i].tagName == "A") eventType = "click"
+    else if (settingElems[i].tagName == "INPUT") eventType = "change"
+    settingElems[i].addEventListener(eventType, e => {
+      let elem = document.querySelector("#" + settingElems[i].id)
+      let newVal
       if (elem.tagName == "A") {
-        elem.innerHTML = settings[setting] ? "on" : "off"
+        newVal = elem.innerHTML == 'on' ? false : true
+        elem.innerHTML = newVal ? 'on' : 'off'
       }
       if (elem.tagName == "INPUT") {
         if (elem.getAttribute("type") == "checkbox") {
-          elem.checked = settings[setting]
+          newVal = elem.checked
         } else {
-          elem.value = settings[setting]
+          newVal = elem.value
         }
       }
-    }
-  })
+      browser.storage.sync.set({
+        [settingElems[i].id]: newVal
+      })
+    })
+  }
 })
