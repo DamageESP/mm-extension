@@ -32,12 +32,13 @@ nav {
 nav span {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
   cursor: pointer;
+  transition: .5s all ease;
   padding: 10px;
   text-align: center;
   flex: 1 1;
 }
 nav span:hover {
-  background: #F2F2F2 !important;
+  background: #F2F2F2;
 }
 nav span > a {
   color: #373737 !important;
@@ -48,32 +49,43 @@ nav span:not(:first-child) {
 }
 .active {
   font-weight: bold;
+  background: #F5F5F5;
 }
 #settingsContent, #home {
-  margin: 15px 10px;
+  margin: 10px 5px;
 }
 
 #settings div, #home {
   padding: 5px;
 }
-#settings div {
+#settings > div {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 input.setting[type="number"] {
-  width: 10em;
+  transition: .5s all ease;
+  border: 0;
+  border-bottom: .45px solid #ff9800;
+  outline: none;
+  background: transparent;
+  font-family: 'Exo', sans-serif;
+  padding: 5px;
+  width: 100px;
+}
+input.setting[type="number"]:focus {
+  border-bottom: .45px solid #FFC36B;
 }
 .settingTitle {
   font-weight: bold;
-  text-decoration: underline;
+  color: #373737;
 }
 .settingBlock a {
   text-decoration: underline;
   text-decoration-style: dotted;
-  color: #b6b6b6;
+  color: #171717;
   display: inline-block;
-  padding: 0 0.5em;
+  padding: 0 2px;
 }
 
 

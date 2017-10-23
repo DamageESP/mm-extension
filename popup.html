@@ -52,14 +52,25 @@
             </div>
           </div>
           <div id="casinos" style="display:none;">
-            <label>
-              <input type="number" class="setting" id="casinos_slowTimer" /> Tiempo de espera en Modo Lento</label>
-            <label>
-              <input type="number" class="setting" id="casinos_slowAmount" /> Cantidad maxima para activar Modo Lento</label>
+            <span class="settingTitle">Modo Lento</span>
+            <div class="settingBlock">
+              <label>
+                Tiempo entre cada apuesta: <input type="number" class="setting" id="casinos_slowTimer" /> segundos.
+              </label>
+            </div>
+            <div class="settingBlock">
+              <label>
+                Cantidad máxima de activación: <input type="number" class="setting" id="casinos_slowAmount" /> fichas.
+              </label>
+            </div>
           </div>
           <div id="hilo" style="display:none;">
-            <label>
-              <input type="number" class="setting" id="hilo_exitOn" /> Fichas objetivo</label>
+            <span class="settingTitle">Modo Auto</span>
+            <div class="settingBlock">
+              <label>
+                Fichas objetivo: <input type="number" class="setting" id="hilo_exitOn" />
+              </label>
+            </div>
           </div>
           <div id="advanced" style="display:none;">
             <label>

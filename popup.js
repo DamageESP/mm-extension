@@ -10,6 +10,15 @@ let switchTab = (newTab, navId) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Resizable inputs
+  function resizable (el, factor) {
+    var int = Number(factor) || 7.7;
+    function resize() {el.style.width = ((el.value.length + 1) * int) + 'px'}
+    var e = 'keyup,keypress,focus,blur,change'.split(',');
+    for (var i in e) el.addEventListener(e[i], resize, false);
+    resize();
+  }
+
   // Nav
   let tabs = document.querySelectorAll("nav span")
   for (let i = 0; i < tabs.length; i++) {
@@ -30,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         elem.checked = value
       } else {
         elem.value = value
+        resizable(elem, 12)
       }
     }
   }
@@ -46,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setSettingValue(settingElems[i].id, defaultSettings[settingElems[i].id])
       }
     })
-
     // Listen to settings changes
     let eventType
     if (settingElems[i].tagName == "A") eventType = "click"
