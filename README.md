@@ -3,7 +3,8 @@
 Este repositorio es una extensión para la configuración de [MegaMegamagnate](https://github.com/NiciusB/MegaMegamagnate)
 
 ![snap1](https://i.imgur.com/SdpdCuh.png)
-![snap1](https://i.imgur.com/OUA9zcO.png)
+![snap2](https://i.imgur.com/OUA9zcO.png)
+![snap3](https://i.imgur.com/ow7gLE5.png)
 
 # Instalación
 ## Móvil
