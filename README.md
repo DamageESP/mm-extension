@@ -5,6 +5,7 @@ Este repositorio es una extensión para la configuración de [MegaMegamagnate](h
 ![snap1](https://i.imgur.com/SdpdCuh.png)
 ![snap2](https://i.imgur.com/OUA9zcO.png)
 ![snap3](https://i.imgur.com/ow7gLE5.png)
+![snap4](https://i.imgur.com/AUKmDp7.png)
 
 # Instalación
 ## Móvil
