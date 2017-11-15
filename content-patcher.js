@@ -2,21 +2,11 @@ var browser = browser || chrome
 
 var settings = defaultSettings
 browser.storage.sync.get(null, customSettings => {
-  for(key in customSettings) {
+  for (key in customSettings) {
     settings[key] = customSettings[key]
   }
-  addSettingsNode(settings)
   addBundle(settings)
 })
-
-function addSettingsNode(settings) {
-  settings.version = 'v1.7'
-  let settingsNode = document.createElement('input')
-  settingsNode.type = "hidden"
-  settingsNode.id = "mm_settings"
-  settingsNode.value = JSON.stringify(settings)
-  document.getElementsByTagName('body')[0].append(settingsNode)
-}
 
 function addBundle(settings) {
   var env = ''
@@ -25,6 +15,13 @@ function addBundle(settings) {
   } else {
     env = "https://rawgit.com/NiciusB/MegaMegamagnate/master/dist"
   }
+
+  settings.version = 'v1.7'
+  var script = document.createElement('script')
+  script.textContent = 'var mmm_settings = JSON.parse(\'' + JSON.stringify(settings) + '\');';
+  document.getElementsByTagName('body')[0].append(script)
+  script.remove()
+
   $.ajax({
     dataType: "script",
     cache: true,
