@@ -101,8 +101,8 @@ footer span {
   flex: 0 1;
   text-align: center;
 }
-footer span:not(:first-child)::before {
-  content: '|';
+footer span:not(:first-child) {
+  border-left: 1px solid black;
 }
 footer span a {
   font-size: 12px;

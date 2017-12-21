@@ -16,7 +16,7 @@ function addBundle(settings) {
     env = "https://rawgit.com/NiciusB/MegaMegamagnate/master/dist"
   }
 
-  settings.version = 'v1.7'
+  settings.version = 'v1.8'
   var script = document.createElement('script')
   script.textContent = 'var mmm_settings = JSON.parse(\'' + JSON.stringify(settings) + '\');';
   document.getElementsByTagName('body')[0].append(script)
